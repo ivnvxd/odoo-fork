@@ -6,6 +6,7 @@ _build/
 !.gitignore
 !.github
 !.mailmap
+!.dockerignore
 # compiled python files
 *.py[co]
 __pycache__/
@@ -47,3 +48,6 @@ package.json
 /man/
 /share/
 /src/
+
+# Config files
+config/
