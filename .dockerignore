@@ -4,6 +4,7 @@
 
 # .docker
 
+extra-addons/
 # addons/
 # config/
 
