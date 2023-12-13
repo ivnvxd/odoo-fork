@@ -15,6 +15,12 @@
         "views/property_tag_view.xml",
         "views/property_offer_view.xml",
         "views/menu_items.xml",
+        # Data files
+        # "data/property_type_data.xml",
+        "data/estate.property.type.csv",
+    ],
+    "demo": [
+        "demo/property_tag.xml",
     ],
     "installable": True,
     "application": True,
