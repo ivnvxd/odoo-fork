@@ -6,14 +6,25 @@ class Property(models.Model):
     _description = "Real Estate Properties"
 
     name = fields.Char(string="Name", required=True)
+    state = fields.Selection(
+        [
+            ("new", "New"),
+            ("received", "Offer Received"),
+            ("accepted", "Offer Accepted"),
+            ("sold", "Sold"),
+            ("cancel", "Cancelled"),
+        ],
+        string="Status",
+        default="new",
+    )
     tag_ids = fields.Many2many("estate.property.tag", string="Property Tags")
     type_id = fields.Many2one("estate.property.type", string="Property Type")
     description = fields.Text(string="Description")
     postcode = fields.Char(string="Postcode")
     date_availability = fields.Date(string="Available From")
     expected_price = fields.Float(string="Expected Price")
-    best_offer = fields.Float(string="Best Offer")
-    selling_price = fields.Float(string="Selling Price")
+    best_offer = fields.Float(string="Best Offer", compute="_compute_best_price")
+    selling_price = fields.Float(string="Selling Price", readonly=True)
     bedrooms = fields.Integer(string="Bedrooms")
     living_area = fields.Integer(string="Living Area (sqm)")
     facades = fields.Integer(string="Facades")
@@ -43,6 +54,36 @@ class Property(models.Model):
     total_area = fields.Integer(string="Total Area (sqm)")
     phone = fields.Char(string="Phone", related="buyer_id.phone")
 
+    def action_sold(self):
+        self.state = "sold"
+
+    def action_cancel(self):
+        self.state = "cancel"
+
+    @api.depends("offer_ids")
+    def _compute_offer_count(self):
+        for record in self:
+            record.offer_count = len(record.offer_ids)
+
+    offer_count = fields.Integer(string="Offer Count", compute=_compute_offer_count)
+
+    def action_property_view_offers(self):
+        return {
+            "type": "ir.actions.act_window",
+            "name": f"{self.name} - Offers",
+            "domain": [("property_id", "=", self.id)],
+            "view_mode": "tree,form",
+            "res_model": "estate.property.offer",
+        }
+
+    @api.depends("offer_ids")
+    def _compute_best_price(self):
+        for record in self:
+            if record.offer_ids:
+                record.best_offer = max(record.offer_ids.mapped("price"))
+            else:
+                record.best_offer = 0
+
 
 class PropertyType(models.Model):
     _name = "estate.property.type"
@@ -56,3 +97,4 @@ class PropertyTag(models.Model):
     _description = "Property Tag"
 
     name = fields.Char(string="Name", required=True)
+    color = fields.Integer(string="Color")
