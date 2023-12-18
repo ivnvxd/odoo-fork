@@ -15,6 +15,7 @@ services:
       - HOST=db
       - USER=odoo
       - PASSWORD=myodoo
+      - ODOO_PARAMS=-d db -u real_estate_ads
 
   db:
     image: postgres:16.1-alpine

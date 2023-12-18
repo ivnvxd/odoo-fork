@@ -33,18 +33,21 @@ case "$1" in
         shift
         if [[ "$1" == "scaffold" ]] ; then
             # exec odoo "$@"
-            exec ./odoo-bin "$@"
+            # exec ./odoo-bin "$@"
+            exec ./odoo-bin $ODOO_PARAMS "$@"
         else
             echo "Starting odoo..."
             wait-for-psql.py ${DB_ARGS[@]} --timeout=30
             # exec odoo "$@" "${DB_ARGS[@]}"
-            exec ./odoo-bin "$@" "${DB_ARGS[@]}"
+            # exec ./odoo-bin "$@" "${DB_ARGS[@]}"
+            exec ./odoo-bin $ODOO_PARAMS "$@" "${DB_ARGS[@]}"
         fi
         ;;
     -*)
         wait-for-psql.py ${DB_ARGS[@]} --timeout=30
         # exec odoo "$@" "${DB_ARGS[@]}"
-        exec ./odoo-bin "$@" "${DB_ARGS[@]}"
+        # exec ./odoo-bin "$@" "${DB_ARGS[@]}"
+        exec ./odoo-bin $ODOO_PARAMS "$@" "${DB_ARGS[@]}"
         ;;
     *)
         exec "$@"
