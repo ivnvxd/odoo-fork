@@ -17,6 +17,14 @@
             </field>
         </record>
 
+        <!-- <record id="estate_property_offer_gantt_view" model="ir.ui.view">
+            <field name="name">estate.property.offer.gantt</field>
+            <field name="model">estate.property.offer</field>
+            <field name="arch" type="xml">
+                <gantt date_start="creation_date" date_stop="dedline" default_group_by="partner_id"/>
+            </field>
+        </record> -->
+
         <record id="estate_property_offer_form_view" model="ir.ui.view">
             <field name="name">estate.property.offer.form</field>
             <field name="model">estate.property.offer</field>
@@ -34,7 +42,7 @@
                                 <field name="creation_date" readonly="1"/>
                                 <field name="validity"/>
                                 <field name="deadline"/>
-                                <field name="partner_email"/>
+                                <!-- <field name="partner_email"/> -->
                             </group>
                         </group>
                     </sheet>
@@ -45,6 +53,7 @@
         <record id="action_property_offer" model="ir.actions.act_window">
             <field name="name">Property Offer</field>
             <field name="res_model">estate.property.offer</field>
+            <!-- <field name="view_mode">tree,gantt,form</field> -->
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="estate_property_offer_tree_view"/>
             <field name="help" type="html">
