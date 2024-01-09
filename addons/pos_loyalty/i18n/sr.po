@@ -3,17 +3,17 @@
 # 	* pos_loyalty
 # 
 # Translators:
-# Milan Bojovic, 2023
 # Dragan Vukosavljevic <dragan.vukosavljevic@gmail.com>, 2023
 # Martin Trigaux, 2023
+# Milan Bojovic <mbojovic@outlook.com>, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:55+0000\n"
+"POT-Creation-Date: 2024-01-05 12:31+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Martin Trigaux, 2023\n"
+"Last-Translator: Milan Bojovic <mbojovic@outlook.com>, 2024\n"
 "Language-Team: Serbian (https://app.transifex.com/odoo/teams/41243/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -115,7 +115,7 @@ msgstr "Podešavanje konfiguracije"
 #: model:ir.model.fields,field_description:pos_loyalty.field_pos_order_line__coupon_id
 #: model:ir.model.fields.selection,name:pos_loyalty.selection__barcode_rule__type__coupon
 msgid "Coupon"
-msgstr ""
+msgstr "Kupon"
 
 #. module: pos_loyalty
 #. odoo-javascript
@@ -135,6 +135,13 @@ msgstr ""
 #, python-format
 msgid "Current Balance:"
 msgstr ""
+
+#. module: pos_loyalty
+#. odoo-javascript
+#: code:addons/pos_loyalty/static/src/overrides/components/order_receipt/order_receipt.xml:0
+#, python-format
+msgid "Customer"
+msgstr "Klijent"
 
 #. module: pos_loyalty
 #. odoo-javascript
@@ -466,7 +473,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:pos_loyalty.field_pos_order_line__reward_id
 #, python-format
 msgid "Reward"
-msgstr ""
+msgstr "Nagrada"
 
 #. module: pos_loyalty
 #: model:ir.model.fields,field_description:pos_loyalty.field_pos_order_line__reward_identifier_code
@@ -765,7 +772,7 @@ msgstr ""
 #: code:addons/pos_loyalty/static/src/app/control_buttons/e_wallet_button/e_wallet_button.js:0
 #, python-format
 msgid "eWallet"
-msgstr ""
+msgstr "eNovčanik"
 
 #. module: pos_loyalty
 #. odoo-javascript
@@ -793,7 +800,7 @@ msgstr ""
 #: code:addons/pos_loyalty/static/src/overrides/components/order_receipt/order_receipt.xml:0
 #, python-format
 msgid "no expiration"
-msgstr ""
+msgstr "bez isteka"
 
 #. module: pos_loyalty
 #. odoo-javascript

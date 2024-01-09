@@ -6,6 +6,7 @@ import { parseEmail } from "@mail/js/utils";
 import { _t } from "@web/core/l10n/translation";
 import { patch } from "@web/core/utils/patch";
 import { Record } from "@mail/core/common/record";
+import { assignDefined, compareDatetime } from "@mail/utils/common/misc";
 
 let nextId = 1;
 
@@ -185,13 +186,14 @@ patch(ThreadService.prototype, {
             }
         });
     },
-    open(thread, replaceNewMessageChatWindow) {
+    /** @override */
+    open(thread, replaceNewMessageChatWindow, options) {
         if (!this.store.discuss.isActive && !this.ui.isSmall) {
-            this._openChatWindow(thread, replaceNewMessageChatWindow);
+            this._openChatWindow(thread, replaceNewMessageChatWindow, options);
             return;
         }
         if (this.ui.isSmall && thread.model === "discuss.channel") {
-            this._openChatWindow(thread, replaceNewMessageChatWindow);
+            this._openChatWindow(thread, replaceNewMessageChatWindow, options);
             return;
         }
         if (thread.model !== "discuss.channel") {
@@ -226,12 +228,19 @@ patch(ThreadService.prototype, {
         }
         super.unpin(...arguments);
     },
-    _openChatWindow(thread, replaceNewMessageChatWindow) {
-        const chatWindow = this.store.ChatWindow.insert({
-            folded: false,
-            thread,
-            replaceNewMessageChatWindow,
-        });
+    _openChatWindow(thread, replaceNewMessageChatWindow, { openMessagingMenuOnClose } = {}) {
+        const chatWindow = this.store.ChatWindow.insert(
+            assignDefined(
+                {
+                    folded: false,
+                    replaceNewMessageChatWindow,
+                    thread,
+                },
+                {
+                    openMessagingMenuOnClose,
+                }
+            )
+        );
         chatWindow.autofocus++;
         if (thread) {
             thread.state = "open";
@@ -241,18 +250,10 @@ patch(ThreadService.prototype, {
     getRecentChannels() {
         return Object.values(this.store.Thread.records)
             .filter((thread) => thread.model === "discuss.channel")
-            .sort((a, b) => {
-                if (a.lastInterestDateTime?.ts !== b.lastInterestDateTime?.ts) {
-                    if (!b.lastInterestDateTime) {
-                        return -1;
-                    }
-                    if (!a.lastInterestDateTime) {
-                        return 1;
-                    }
-                    return b.lastInterestDateTime.ts - a.lastInterestDateTime.ts;
-                }
-                return a.id - b.id;
-            });
+            .sort(
+                (a, b) =>
+                    compareDatetime(b.lastInterestDateTime, a.lastInterestDateTime) || b.id - a.id
+            );
     },
     getNeedactionChannels() {
         return this.getRecentChannels().filter((channel) => this.getCounter(channel) > 0);

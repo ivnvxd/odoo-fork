@@ -16,10 +16,10 @@
 # Arma Gedonsky <armagedonsky@hot.ee>, 2023
 # Triine Aavik <triine@avalah.ee>, 2023
 # Egon Raamat <egon@avalah.ee>, 2023
-# Leaanika Randmets, 2023
 # Martin Trigaux, 2023
 # Patrick-Jordan Kiudorv, 2023
 # Katrin Kampura, 2023
+# Leaanika Randmets, 2023
 # Anna, 2023
 # 
 msgid ""
@@ -97,7 +97,7 @@ msgstr ""
 #. module: payment
 #: model_terms:ir.ui.view,arch_db:payment.method_form
 msgid "<small class=\"text-600\">Save my payment details</small>"
-msgstr ""
+msgstr "<small class=\"text-600\">Salvesta minu makseandmed</small>"
 
 #. module: payment
 #: model_terms:ir.ui.view,arch_db:payment.payment_provider_form
@@ -705,7 +705,7 @@ msgstr "\"Tehtud\" sõnum"
 #. module: payment
 #: model:ir.model.fields.selection,name:payment.selection__payment_transaction__state__draft
 msgid "Draft"
-msgstr "Planeerimata"
+msgstr "Mustand"
 
 #. module: payment
 #: model:ir.model.fields,field_description:payment.field_payment_link_wizard__partner_email
@@ -766,7 +766,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:payment.selection__payment_provider__support_manual_capture__full_only
 #: model:ir.model.fields.selection,name:payment.selection__payment_provider__support_refund__full_only
 msgid "Full Only"
-msgstr ""
+msgstr "Ainult täielik"
 
 #. module: payment
 #: model_terms:ir.ui.view,arch_db:payment.payment_link_wizard_view_form
@@ -1281,7 +1281,7 @@ msgstr "Maksete üksikasjad on salvestatud %(date)s"
 #. module: payment
 #: model_terms:ir.ui.view,arch_db:payment.portal_my_home_payment
 msgid "Payment methods"
-msgstr ""
+msgstr "Makseviis"
 
 #. module: payment
 #. odoo-javascript
@@ -1510,7 +1510,7 @@ msgstr ""
 #. module: payment
 #: model:ir.model.fields,field_description:payment.field_payment_provider__show_allow_tokenization
 msgid "Show Allow Tokenization"
-msgstr ""
+msgstr "Näita Luba tokeniseerimist"
 
 #. module: payment
 #: model:ir.model.fields,field_description:payment.field_payment_provider__show_auth_msg

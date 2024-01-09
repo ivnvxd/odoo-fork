@@ -4297,6 +4297,16 @@ X[]
                 contentAfter: '<p>a http://test.com b <a href="http://test.com">http://test.com</a>[] c http://test.com d</p>',
                 //in reality: '<p>a http://test.com b <a href="http://test.com">http://test.com</a>&nbsp;[] c http://test.com d</p>'
             });
+            await testEditor(BasicEditor, {
+                contentBefore: '<p>http://test.com[]</p>',
+                stepFunction: async (editor) => {
+                    // Setup: simulate multiple text nodes in a p: <p>"http://test" ".com"</p>
+                    editor.editable.firstChild.firstChild.splitText(11);
+                    // Action: insert space
+                    insertText(editor, ' ');
+                },
+                contentAfter: '<p><a href="http://test.com">http://test.com</a> []</p>',
+            });
         });
         it('should transform url after enter', async () => {
             await testEditor(BasicEditor, {
@@ -7106,6 +7116,42 @@ X[]
                 await testEditor(BasicEditor, {
                     contentBefore: '<hr contenteditable="false">[]',
                     contentAfter: '<hr contenteditable="false">',
+                });
+            });
+        });
+        describe('rating star elements', () => {
+            it('add star elements', async () => {
+                await testEditor(BasicEditor, {
+                    contentBefore: '<p>[]</p>',
+                    stepFunction: async editor => {
+                        await insertText(editor,'/');
+                        await insertText(editor, '3star');
+                        await triggerEvent(editor.editable, 'keyup')
+                        await triggerEvent(editor.editable, 'keydown', {key: 'Enter'})
+                        await nextTick()
+                    },
+                    contentAfterEdit: `<p>\u200B<span contenteditable="false" class="o_stars o_three_stars" id="checkId-1"><i class="fa fa-star-o" contenteditable="false">\u200B</i><i class="fa fa-star-o" contenteditable="false">\u200B</i><i class="fa fa-star-o" contenteditable="false">\u200B</i></span>\u200B[]</p>`,
+                });
+                await testEditor(BasicEditor, {
+                    contentBefore: '<p>[]</p>',
+                    stepFunction: async editor => {
+                        await insertText(editor,'/');
+                        await insertText(editor, '5star');
+                        await triggerEvent(editor.editable, 'keyup')
+                        await triggerEvent(editor.editable, 'keydown', {key: 'Enter'})
+                        await nextTick()
+                    },
+                    contentAfterEdit: `<p>\u200B<span contenteditable="false" class="o_stars o_five_stars" id="checkId-1"><i class="fa fa-star-o" contenteditable="false">\u200B</i><i class="fa fa-star-o" contenteditable="false">\u200B</i><i class="fa fa-star-o" contenteditable="false">\u200B</i><i class="fa fa-star-o" contenteditable="false">\u200B</i><i class="fa fa-star-o" contenteditable="false">\u200B</i></span>\u200B[]</p>`,
+                });
+            });
+            it('should delete star rating elements when delete is pressed twice', async () => {
+                await testEditor(BasicEditor, {
+                    contentBefore: `<p>\u200B<span contenteditable="false" class="o_stars o_three_stars"><i class="fa fa-star-o" id="checkId-1" contenteditable="false">\u200B</i><i class="o_stars fa fa-star-o" id="checkId-2" contenteditable="false">\u200B</i><i class="o_stars fa fa-star-o" id="checkId-3" contenteditable="false">\u200B</i></span>\u200B[]</p>`,
+                    stepFunction: async editor => {
+                        await deleteBackward(editor)
+                        await deleteBackward(editor)
+                    },
+                    contentAfter: '<p>\u200B[]<br></p>'
                 });
             });
         });

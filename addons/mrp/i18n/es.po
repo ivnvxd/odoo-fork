@@ -6,16 +6,16 @@
 # Fernanda Alvarez, 2023
 # Pedro M. Baeza <pedro.baeza@tecnativa.com>, 2023
 # Pablo Rojas <rojaspablo88@gmail.com>, 2023
-# Wil Odoo, 2023
-# Larissa Manderfeld, 2023
+# Larissa Manderfeld, 2024
+# Wil Odoo, 2024
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-26 21:55+0000\n"
+"POT-Creation-Date: 2024-01-05 12:31+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
-"Last-Translator: Larissa Manderfeld, 2023\n"
+"Last-Translator: Wil Odoo, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/odoo/teams/41243/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +57,7 @@ msgstr "Cuando todos los componentes estan disponibles"
 #: model:ir.model.fields,field_description:mrp.field_product_product__bom_count
 #: model:ir.model.fields,field_description:mrp.field_product_template__bom_count
 msgid "# Bill of Material"
-msgstr "Nº de listas de materiales"
+msgstr "# Lista de materiales"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_product_product__used_in_bom_count
@@ -610,7 +610,7 @@ msgstr "Actividades"
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__activity_exception_decoration
 #: model:ir.model.fields,field_description:mrp.field_mrp_unbuild__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Decoración de Actividad  de Excepción"
+msgstr "Decoración de Actividad de Excepción"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__activity_state
@@ -622,7 +622,7 @@ msgstr "Estado de la actividad"
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__activity_type_icon
 #: model:ir.model.fields,field_description:mrp.field_mrp_unbuild__activity_type_icon
 msgid "Activity Type Icon"
-msgstr "Ícono de tipo de actvidad"
+msgstr "Icono de tipo de actvidad"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_workcenter_block_wizard_form
@@ -701,7 +701,7 @@ msgstr "Etiquetas de los informes de asignación"
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_res_config_settings__group_mrp_reception_report
 msgid "Allocation Report for Manufacturing Orders"
-msgstr "Reporte de asignación para órdenes de fabricación"
+msgstr "Informe de asignación para órdenes de fabricación"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__allow_workorder_dependencies
@@ -824,7 +824,7 @@ msgstr "Adjuntado a"
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__message_attachment_count
 #: model:ir.model.fields,field_description:mrp.field_mrp_unbuild__message_attachment_count
 msgid "Attachment Count"
-msgstr "Nº de archivos adjuntos"
+msgstr "Número de archivos adjuntos"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_document__local_url
@@ -832,8 +832,8 @@ msgid "Attachment URL"
 msgstr "URL del adjunto"
 
 #. module: mrp
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/mrp/models/mrp_bom.py:0
 #: code:addons/mrp/static/src/components/bom_overview_line/mrp_bom_overview_line.js:0
 #: code:addons/mrp/static/src/components/bom_overview_table/mrp_bom_overview_table.xml:0
@@ -845,7 +845,7 @@ msgstr "Adjuntos"
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_bom_line__attachments_count
 msgid "Attachments Count"
-msgstr "Cuenta de archivos adjuntos"
+msgstr "Número de archivos adjuntos"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__product_variant_attributes
@@ -999,7 +999,7 @@ msgstr "Se necesitan variantes de producto LdM para aplicar esta línea."
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_bom_line__child_line_ids
 msgid "BOM lines of the referred bom"
-msgstr "Lineas de la LdM a la que se refiere"
+msgstr "Líneas de la LdM a la que se refiere"
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_mrp_production_backorder_line
@@ -1092,7 +1092,7 @@ msgstr "Lista de materiales"
 #: model:ir.actions.act_window,name:mrp.mrp_bom_form_action
 #: model:ir.ui.menu,name:mrp.menu_mrp_bom_form_action
 msgid "Bills of Materials"
-msgstr "Lista de materiales"
+msgstr "Listas de materiales"
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_production__bom_id
@@ -1260,7 +1260,7 @@ msgstr "Subproductos"
 #: code:addons/mrp/models/mrp_production.py:0
 #, python-format
 msgid "By-products cost shares must be positive."
-msgstr "Los repartos de costos de subproductos deben ser positivos."
+msgstr "Los repartos de costes de subproductos deben ser positivos."
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_mrp_bom_byproduct
@@ -1405,7 +1405,7 @@ msgstr "Color"
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_workcenter_tag__color
 msgid "Color Index"
-msgstr "Índice de color"
+msgstr "Índice de Colores"
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_res_company
@@ -1505,7 +1505,7 @@ msgstr "Calculado el último"
 #. module: mrp
 #: model:ir.model,name:mrp.model_res_config_settings
 msgid "Config Settings"
-msgstr "Opciones de configuración"
+msgstr "Ajustes de configuración"
 
 #. module: mrp
 #: model:ir.ui.menu,name:mrp.menu_mrp_configuration
@@ -1583,9 +1583,8 @@ msgid ""
 "Conversion between Units of Measure can only occur if they belong to the "
 "same category. The conversion will be made based on the ratios."
 msgstr ""
-"La conversión entre las unidades de medidas sólo pueden ocurrir si "
-"pertenecen a la misma categoría. La conversión se basará en los ratios "
-"establecidos."
+"La conversión entre las unidades de medidas sólo puede ocurrir si pertenecen"
+" a la misma categoría. La conversión se basará en los índices establecidos."
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_routing_workcenter_bom_tree_view
@@ -1603,13 +1602,13 @@ msgstr "Copiar las operaciones seleccionadas"
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 #, python-format
 msgid "Cost Breakdown of Products"
-msgstr "Desglose de costos de productos"
+msgstr "Desglose de costes de productos"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_bom_byproduct__cost_share
 #: model:ir.model.fields,field_description:mrp.field_stock_move__cost_share
 msgid "Cost Share (%)"
-msgstr "Reparto de costos (%)"
+msgstr "Reparto de costes (%)"
 
 #. module: mrp
 #. odoo-javascript
@@ -1625,7 +1624,7 @@ msgstr ""
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
 #, python-format
 msgid "Cost from product form"
-msgstr "Costo del formulario del producto"
+msgstr "Coste del formulario del producto"
 
 #. module: mrp
 #. odoo-javascript
@@ -1633,7 +1632,7 @@ msgstr "Costo del formulario del producto"
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 #, python-format
 msgid "Cost of Components per unit"
-msgstr "Costo de los componentes por unidad"
+msgstr "Coste de los componentes por unidad"
 
 #. module: mrp
 #. odoo-javascript
@@ -1641,7 +1640,7 @@ msgstr "Costo de los componentes por unidad"
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 #, python-format
 msgid "Cost of Operations per unit"
-msgstr "Costo de las operaciones por unidad"
+msgstr "Coste de las operaciones por unidad"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_workcenter__costs_hour
@@ -1707,7 +1706,7 @@ msgstr "Crear una nueva operación"
 #: model_terms:ir.actions.act_window,help:mrp.mrp_workcenter_action
 #: model_terms:ir.actions.act_window,help:mrp.mrp_workcenter_kanban_action
 msgid "Create a new work center"
-msgstr "Crear un centro de trabajo"
+msgstr "Crear un nuevo centro de trabajo"
 
 #. module: mrp
 #: model_terms:ir.actions.act_window,help:mrp.mrp_workorder_report
@@ -1721,7 +1720,7 @@ msgid ""
 "Create and confirm Manufacturing Orders this many days in advance, to have enough time to replenish components or manufacture semi-finished products.\n"
 "Note that security lead times will also be considered when appropriate."
 msgstr ""
-"Cree y confirme órdenes de producción con estos días de antelación, para tener tiempo suficiente para reabastecer componentes o fabricar productos semielaborados.\n"
+"Cree y confirme órdenes de fabricación con estos días de antelación, para tener tiempo suficiente para reabastecer componentes o fabricar productos semielaborados.\n"
 "Tenga en cuenta que los plazos de seguridad también se considerarán cuando sea adecuado."
 
 #. module: mrp
@@ -1752,7 +1751,7 @@ msgstr ""
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_stock_move__created_production_id
 msgid "Created Production Order"
-msgstr "Pedido de producción creado"
+msgstr "Orden de producción creada"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_change_production_qty__create_uid
@@ -2002,7 +2001,7 @@ msgstr "Descripción"
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_workcenter_view
 msgid "Description of the work center..."
-msgstr "Descripción del Centro de Trabajo."
+msgstr "Descripción del centro de trabajo..."
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_unbuild__location_dest_id
@@ -2072,6 +2071,11 @@ msgstr "Mostrar el atajo de número de serie en los movimientos"
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_production_form_view
 msgid "Displays the consumed Lot/Serial Numbers."
 msgstr "Muestra los números de lote o de serie consumidos."
+
+#. module: mrp
+#: model_terms:ir.ui.view,arch_db:mrp.mrp_production_form_view
+msgid "Displays the produced Lot/Serial Numbers."
+msgstr ""
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.stock_warn_insufficient_qty_unbuild_form_view
@@ -2369,7 +2373,7 @@ msgstr "Seguidores (Contactos)"
 #: model:ir.model.fields,help:mrp.field_mrp_production__activity_type_icon
 #: model:ir.model.fields,help:mrp.field_mrp_unbuild__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr "Icono de Font Awesome ej. fa-tasks"
+msgstr "Icono de Font Awesome p. ej. fa-tasks"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_consumption_warning_form
@@ -2460,7 +2464,7 @@ msgstr "Actividades futuras"
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_workcenter_view
 msgid "General Information"
-msgstr "Información General"
+msgstr "Información general"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.view_assign_serial_numbers_production
@@ -2565,7 +2569,7 @@ msgstr "Tiene un mensaje"
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_workcenter__has_routing_lines
 msgid "Has Routing Lines"
-msgstr ""
+msgstr "Tiene líneas de enrutamiento"
 
 #. module: mrp
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_document__priority__2
@@ -3373,7 +3377,7 @@ msgstr "Orden de fabricación"
 #: model_terms:ir.ui.view,arch_db:mrp.view_production_graph
 #: model_terms:ir.ui.view,arch_db:mrp.view_production_pivot
 msgid "Manufacturing Orders"
-msgstr "Órdenes de producción"
+msgstr "Órdenes de fabricación"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_production_filter
@@ -3389,7 +3393,7 @@ msgstr "Preparación para la fabricación"
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_production_form_view
 msgid "Manufacturing Reference"
-msgstr "Referencia de Fabricación"
+msgstr "Referencia de fabricación"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_stock_warehouse_orderpoint__manufacturing_visibility_days
@@ -3403,7 +3407,7 @@ msgid ""
 "                workers and/or machines, they are used for costing, scheduling, capacity planning, etc."
 msgstr ""
 "Las operaciones de fabricación se procesan en centros de trabajo. Un centro de trabajo se compone de\n"
-"                trabajadores y/o maquinaria, se utilizan para calcular costos, programar actividades, planear capacidad, etc."
+"                trabajadores y/o maquinaria, se utilizan para calcular costes, programar actividades, planear capacidad, etc."
 
 #. module: mrp
 #: model_terms:ir.actions.act_window,help:mrp.mrp_workcenter_kanban_action
@@ -3413,7 +3417,7 @@ msgid ""
 "                They can be defined via the configuration menu."
 msgstr ""
 "Las operaciones de fabricación se procesan en centros de trabajo. Un centro de trabajo se puede componer de\n"
-"                trabajadores y/o maquinaria, se utilizan para calcular costos, programar actividades, planear la capacidad, etc.\n"
+"                trabajadores y/o maquinaria, se utilizan para calcular costes, programar actividades, planear la capacidad, etc.\n"
 "                Se pueden definir a través del menú de configuración."
 
 #. module: mrp
@@ -3442,7 +3446,7 @@ msgstr "Marc Demo"
 #. module: mrp
 #: model:ir.actions.server,name:mrp.action_production_order_mark_done
 msgid "Mark as Done"
-msgstr "Marcar como Hecho"
+msgstr "Marcar como hecho"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_production_form_view
@@ -3490,8 +3494,8 @@ msgid "Minimum Inventory Rule"
 msgstr "Regla de inventario mínimo"
 
 #. module: mrp
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 #: code:addons/mrp/report/mrp_report_mo_overview.py:0
 #: code:addons/mrp/static/src/components/bom_overview_special_line/mrp_bom_overview_special_line.xml:0
@@ -3758,7 +3762,7 @@ msgstr "Número de desmontajes"
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__message_has_error_counter
 #: model:ir.model.fields,field_description:mrp.field_mrp_unbuild__message_has_error_counter
 msgid "Number of errors"
-msgstr "Numero de errores"
+msgstr "Número de errores"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__mrp_production_child_count
@@ -3818,7 +3822,7 @@ msgstr "OEE"
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_production_workorder_form_view_inherit
 msgid "On Hand"
-msgstr "A mano"
+msgstr "En stock"
 
 #. module: mrp
 #. odoo-python
@@ -3827,8 +3831,8 @@ msgstr "A mano"
 msgid ""
 "Only manufacturing orders in either a draft or confirmed state can be %s."
 msgstr ""
-"Solo las órdenes de fabricación en estado de borrador o confirmado se pueden"
-" %s."
+"Solo las órdenes de fabricación en estado de borrador o confirmado pueden "
+"ser %s."
 
 #. module: mrp
 #. odoo-python
@@ -3886,8 +3890,8 @@ msgid "Operation not supported"
 msgstr "Operación no permitida"
 
 #. module: mrp
-#. odoo-python
 #. odoo-javascript
+#. odoo-python
 #: code:addons/mrp/report/mrp_report_bom_structure.py:0
 #: code:addons/mrp/static/src/components/bom_overview_display_filter/mrp_bom_overview_display_filter.js:0
 #: code:addons/mrp/static/src/components/bom_overview_special_line/mrp_bom_overview_special_line.xml:0
@@ -4140,7 +4144,7 @@ msgstr "Ordenes planificadas"
 #. module: mrp
 #: model:ir.actions.server,name:mrp.action_plan_with_components_availability
 msgid "Plan based on Components Availability"
-msgstr ""
+msgstr "Planificar según disponibilidad de componentes"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.res_config_settings_view_form
@@ -4177,7 +4181,7 @@ msgstr "Lámina de plástico"
 #: code:addons/mrp/models/mrp_production.py:0
 #, python-format
 msgid "Please set the first Serial Number or a default sequence"
-msgstr ""
+msgstr "Establezca el primer número de serie o una secuencia por defecto"
 
 #. module: mrp
 #. odoo-python
@@ -4279,7 +4283,7 @@ msgstr "Defecto en el proceso"
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.res_config_settings_view_form
 msgid "Process manufacturing orders from the barcode application"
-msgstr ""
+msgstr "Procesar órdenes de fabricación desde la aplicación Código de barras"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.res_config_settings_view_form
@@ -4413,7 +4417,7 @@ msgstr "Gestión del ciclo de vida del producto (PLM)"
 #. module: mrp
 #: model:ir.model,name:mrp.model_stock_move_line
 msgid "Product Moves (Stock Move Line)"
-msgstr "Movimientos de Producto (Stock Move Line)"
+msgstr "Movimientos de producto (línea de movimiento de stock)"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_stock_move__product_qty_available
@@ -4424,6 +4428,11 @@ msgstr "Cantidad de productos a la mano"
 #: model_terms:ir.ui.view,arch_db:mrp.view_production_graph
 msgid "Product Quantity"
 msgstr "Cantidad producto"
+
+#. module: mrp
+#: model:ir.model,name:mrp.model_product_replenish
+msgid "Product Replenish"
+msgstr "Reabastecimiento de producto"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_bom_line__product_tmpl_id
@@ -4448,7 +4457,7 @@ msgstr "UdM de producto"
 #: model:ir.model,name:mrp.model_product_product
 #: model:ir.model.fields,field_description:mrp.field_mrp_bom__product_id
 msgid "Product Variant"
-msgstr "Variantes de producto"
+msgstr "Variante de producto"
 
 #. module: mrp
 #: model:ir.actions.act_window,name:mrp.mrp_product_variant_action
@@ -4773,7 +4782,7 @@ msgstr "¡La referencia debe ser única por compañía!"
 msgid ""
 "Reference of the document that generated this production order request."
 msgstr ""
-"Referencia al documento que generó esta solicitud de orden de producción."
+"Referencia del documento que generó esta solicitud de orden de producción."
 
 #. module: mrp
 #. odoo-javascript
@@ -4826,6 +4835,7 @@ msgstr "Informes"
 #. module: mrp
 #. odoo-javascript
 #: code:addons/mrp/static/src/components/mo_overview/mrp_mo_overview.xml:0
+#: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 #, python-format
 msgid "Reserved"
 msgstr "Reservado"
@@ -4998,7 +5008,7 @@ msgstr "Buscar órdenes de trabajo"
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_workcenter_search
 msgid "Search for mrp workcenter"
-msgstr "Buscar por centro de producción mrp"
+msgstr "Buscar por centro de trabajo mrp"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.res_config_settings_view_form
@@ -5215,6 +5225,9 @@ msgid ""
 "Some product moves have already been confirmed, this manufacturing order "
 "can't be completely cancelled. Are you still sure you want to process?"
 msgstr ""
+"Algunos movimientos de productos ya se han confirmado, esta orden de "
+"fabricación no se puede cancelar por completo. ¿Todavía está seguro de que "
+"quiere procesar? "
 
 #. module: mrp
 #. odoo-python
@@ -5225,6 +5238,9 @@ msgid ""
 "\n"
 "It’d be a shame to waste all that progress, right?"
 msgstr ""
+"Algunas órdenes de trabajo ya están hechas, por lo que no se puede anular la planificación de esta orden de fabricación.\n"
+"\n"
+"Sería una pena desperdiciar todo ese progreso, ¿no lo cree?"
 
 #. module: mrp
 #. odoo-python
@@ -5235,6 +5251,9 @@ msgid ""
 "\n"
 "It’d be a shame to waste all that progress, right?"
 msgstr ""
+"Ya se empezaron a hacer algunas órdenes de trabajo, por lo que no se puede anular la planificación de esta orden de fabricación.\n"
+"\n"
+"Sería una pena desperdiciar todo ese progreso, ¿no lo cree?"
 
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_production__origin
@@ -5617,8 +5636,8 @@ msgid ""
 "(divided between the quantity produced).The total of all by-products' cost "
 "share must be less than or equal to 100."
 msgstr ""
-"El porcentaje del costo de producción final para esta línea de subproducto "
-"(dividido entre la cantidad producida). El total de reparto de costos de "
+"El porcentaje del coste de producción final para esta línea de subproducto "
+"(dividido entre la cantidad producida). El total de reparto de costes de "
 "subproductos debe ser menor o igual a 100."
 
 #. module: mrp
@@ -5627,8 +5646,8 @@ msgid ""
 "The percentage of the final production cost for this by-product. The total "
 "of all by-products' cost share must be smaller or equal to 100."
 msgstr ""
-"El porcentaje del costo de producción final para este subproducto. El total "
-"de reparto de costos de subproductos debe ser menor o igual a 100."
+"El porcentaje del coste de producción final para este subproducto. El total "
+"de reparto de costes de subproductos debe ser menor o igual a 100."
 
 #. module: mrp
 #. odoo-python
@@ -5675,7 +5694,7 @@ msgstr "¡La cantidad a producir debe ser positiva!"
 #. module: mrp
 #: model:ir.model.constraint,message:mrp.constraint_mrp_unbuild_qty_positive
 msgid "The quantity to unbuild must be positive!"
-msgstr ""
+msgstr "¡La cantidad a desmantelar debe ser positiva!"
 
 #. module: mrp
 #. odoo-python
@@ -5710,7 +5729,7 @@ msgstr "El nombre de etiqueta debe ser único."
 #, python-format
 msgid "The total cost share for a BoM's by-products cannot exceed 100."
 msgstr ""
-"El reparto de costos total para los subproductos de una lista de materiales "
+"El reparto de costes total para los subproductos de una lista de materiales "
 "no puede ser mayor a 100."
 
 #. module: mrp
@@ -5721,7 +5740,7 @@ msgid ""
 "The total cost share for a manufacturing order's by-products cannot exceed "
 "100."
 msgstr ""
-"El reparto de costos total para los subproductos de una orden de fabricación"
+"El reparto de costes total para los subproductos de una orden de fabricación"
 " no puede ser mayor a 100."
 
 #. module: mrp
@@ -5969,7 +5988,7 @@ msgstr "Fabricar"
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_unbuild_search_view
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_production_filter
 msgid "Today Activities"
-msgstr "Actividades de Hoy"
+msgstr "Actividades de hoy"
 
 #. module: mrp
 #: model_terms:product.template,description:mrp.product_product_wood_wear_product_template
@@ -6103,7 +6122,7 @@ msgstr "Tipo de operación"
 #: model:ir.model.fields,help:mrp.field_mrp_production__activity_exception_decoration
 #: model:ir.model.fields,help:mrp.field_mrp_unbuild__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr "Tipo de actividad de excepción registrada."
+msgstr "Tipo de actividad de excepción en el registro."
 
 #. module: mrp
 #. odoo-python
@@ -6179,7 +6198,7 @@ msgstr "Unidad"
 #: model_terms:ir.ui.view,arch_db:mrp.mo_overview_content
 #, python-format
 msgid "Unit Cost"
-msgstr "Costo unitario"
+msgstr "Coste unitario"
 
 #. module: mrp
 #. odoo-javascript
@@ -6239,7 +6258,7 @@ msgid ""
 "Unlock to adjust component demand during production, or consumed quantities "
 "once the manufacturing order is done."
 msgstr ""
-"Desbloquee para ajustar la demanda de componentes durante la producción o "
+"Desbloquee para ajustar la demanda de componentes durante la fabricación o "
 "las cantidades consumidas una vez que la orden de fabricación esté terminada"
 " "
 
@@ -6310,7 +6329,7 @@ msgstr "Utilizar dependencias en las operaciones"
 #. module: mrp
 #: model:res.groups,name:mrp.group_mrp_reception_report
 msgid "Use Reception Report with Manufacturing Orders"
-msgstr "Utilizar el informe de recepción con las órdenes de producción"
+msgstr "Utilizar el informe de recepción con las órdenes de fabricación"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.product_product_form_view_bom_button
@@ -6373,7 +6392,7 @@ msgstr "Variante"
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.report_mrporder
 msgid "Vendor ABC"
-msgstr ""
+msgstr "Proveedor ABC"
 
 #. module: mrp
 #: model:ir.model.fields.selection,name:mrp.selection__mrp_document__priority__3
@@ -6488,7 +6507,7 @@ msgstr "Mensajes del sitio web"
 #: model:ir.model.fields,help:mrp.field_mrp_production__website_message_ids
 #: model:ir.model.fields,help:mrp.field_mrp_unbuild__website_message_ids
 msgid "Website communication history"
-msgstr "Historial de comunicaciones del sitio web"
+msgstr "Historial de comunicación del sitio web"
 
 #. module: mrp
 #: model:ir.model.fields,help:mrp.field_mrp_bom__picking_type_id
@@ -6498,7 +6517,7 @@ msgid ""
 " operation type. That allows to define stock rules which trigger different "
 "manufacturing orders with different BoMs."
 msgstr ""
-"Cuando un abastecimiento tiene una ruta de \"producción\" con un tipo de "
+"Cuando un abastecimiento tiene una ruta de \"fabricación\" con un tipo de "
 "operación, intentará crear una Orden de Fabricación para ese producto "
 "utilizando una LdM del mismo tipo de operación. Eso permite definir reglas "
 "de almacén que desencadenan diferentes órdenes de fabricación con diferentes"
@@ -6534,7 +6553,7 @@ msgid ""
 "created to fulfill the need."
 msgstr ""
 "Cuando los productos son necesarios en <b>%s</b>, <br/> una orden de "
-"producción es generada para cumplir con la necesidad."
+"fabricación es generada para cumplir con la necesidad."
 
 #. module: mrp
 #: model_terms:digest.tip,tip_description:mrp.digest_tip_mrp_0
@@ -6545,10 +6564,10 @@ msgid ""
 "maintenance alerts, scrap products, etc."
 msgstr ""
 "Con el panel de control del centro de trabajo de Odoo, su trabajador puede "
-"iniciar órdenes de trabajo en la tienda y seguir instrucciones en las hojas "
+"iniciar órdenes de trabajo en el taller y seguir instrucciones en las hojas "
 "de trabajo. Las pruebas de calidad están perfectamente integradas en el "
-"proceso. Los trabajadores pueden activar circuitos de retroalimentación, "
-"alertas de mantenimiento, descartar productos, etc."
+"proceso. Los trabajadores pueden activar bucles de retroalimentación, "
+"alertas de mantenimiento, productos desechados, etc."
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_mrp_consumption_warning
@@ -6593,7 +6612,7 @@ msgstr "Panel de Madera"
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_production_workorder_form_view_filter
 #: model_terms:ir.ui.view,arch_db:mrp.view_mrp_workcenter_search
 msgid "Work Center"
-msgstr "Centro de producción"
+msgstr "Centro de trabajo"
 
 #. module: mrp
 #: model:ir.model,name:mrp.model_mrp_workcenter_capacity
@@ -6603,13 +6622,13 @@ msgstr "Capacidad del centro de trabajo"
 #. module: mrp
 #: model:ir.model.fields,field_description:mrp.field_mrp_workcenter__workcenter_load
 msgid "Work Center Load"
-msgstr "Carga centro de producción"
+msgstr "Carga centro de trabajo"
 
 #. module: mrp
 #: model:ir.actions.act_window,name:mrp.action_mrp_workcenter_load_report_graph
 #: model_terms:ir.ui.view,arch_db:mrp.view_workcenter_load_pivot
 msgid "Work Center Loads"
-msgstr "Cargas centro de producción"
+msgstr "Cargas centro de trabajo"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_workcenter_view
@@ -6619,12 +6638,12 @@ msgstr "Nombre del centro de trabajo"
 #. module: mrp
 #: model:ir.model,name:mrp.model_mrp_routing_workcenter
 msgid "Work Center Usage"
-msgstr "Utilización del centro de producción"
+msgstr "Utilización del centro de trabajo"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.view_work_center_load_graph
 msgid "Work Center load"
-msgstr "Carga centro de producción"
+msgstr "Carga centro de trabajo"
 
 #. module: mrp
 #: model:ir.actions.act_window,name:mrp.mrp_workcenter_action
@@ -6784,7 +6803,7 @@ msgstr "Pérdidas de productividad en el centro de trabajo"
 #: model:ir.model.fields,field_description:mrp.field_mrp_workcenter__working_state
 #: model:ir.model.fields,field_description:mrp.field_mrp_workorder__working_state
 msgid "Workcenter Status"
-msgstr "Estado del Centro de Trabajo"
+msgstr "Estado del centro de trabajo"
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_workcenter_kanban
@@ -6861,7 +6880,7 @@ msgid ""
 "Please close or cancel it first."
 msgstr ""
 "No se puede eliminar una lista de materiales mientras se están ejecutando "
-"órdenes de producción. Por favor, cierre o cancelela primero."
+"órdenes de fabricación. Por favor, cierre o cancelela primero."
 
 #. module: mrp
 #. odoo-python
@@ -6870,7 +6889,7 @@ msgstr ""
 msgid ""
 "You can only merge manufacturing orders of identical products with same BoM."
 msgstr ""
-"Solo puede fusionar órdenes de producción de productos idénticos con la "
+"Solo puede fusionar órdenes de fabricación de productos idénticos con la "
 "misma LdM."
 
 #. module: mrp
@@ -6881,7 +6900,7 @@ msgid ""
 "You can only merge manufacturing orders with no additional components or by-"
 "products."
 msgstr ""
-"Solo puede fusionar órdenes de producción sin componentes adicionales o "
+"Solo puede fusionar órdenes de fabricación sin componentes adicionales o "
 "subproductos."
 
 #. module: mrp
@@ -6890,14 +6909,14 @@ msgstr ""
 #, python-format
 msgid "You can only merge manufacturing with the same operation type"
 msgstr ""
-"Solo puede fusionar órdenes de producción con el mismo tipo de operación"
+"Solo puede fusionar órdenes de fabricación con el mismo tipo de operación"
 
 #. module: mrp
 #. odoo-python
 #: code:addons/mrp/models/mrp_production.py:0
 #, python-format
 msgid "You can only merge manufacturing with the same state."
-msgstr "Solo puede fusionar órdenes de producción con el mismo estado."
+msgstr "Solo puede fusionar órdenes de fabricación con el mismo estado."
 
 #. module: mrp
 #. odoo-python
@@ -7003,17 +7022,6 @@ msgstr ""
 "                        </b>"
 
 #. module: mrp
-#. odoo-python
-#: code:addons/mrp/wizard/change_production_qty.py:0
-#, python-format
-msgid ""
-"You have already processed %(quantity)s. Please input a quantity higher than"
-" %(quantity)s "
-msgstr ""
-"Ya ha procesado %(quantity)s. Por favor, introduzca una cantidad mayor que "
-"%(quantity)s"
-
-#. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.view_assign_serial_numbers_production
 msgid ""
 "You have entered less serial numbers than the quantity to produce.<br/>\n"
@@ -7081,10 +7089,8 @@ msgstr "Debe proporcionar un lote para el producto terminado."
 #. odoo-python
 #: code:addons/mrp/models/mrp_production.py:0
 #, python-format
-msgid "You need to supply Lot/Serial Number for products and 'picked' them:"
+msgid "You need to supply Lot/Serial Number for products and 'consume' them:"
 msgstr ""
-"Debe proporcionar el número de lote o serie de los productos y añadirlos a "
-"la cesta:"
 
 #. module: mrp
 #: model:ir.actions.act_window,name:mrp.action_mrp_production_backorder
@@ -7111,15 +7117,15 @@ msgid "cancelled"
 msgstr "Cancelado"
 
 #. module: mrp
-#: model_terms:ir.ui.view,arch_db:mrp.view_assign_serial_numbers_production
-msgid "copy paste a list and/or use Generate"
-msgstr "copie y pegue una lista y/o utilice Generar"
-
-#. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_bom_form_view
 #: model_terms:ir.ui.view,arch_db:mrp.res_config_settings_view_form
 msgid "days"
 msgstr "días"
+
+#. module: mrp
+#: model_terms:ir.ui.view,arch_db:mrp.view_assign_serial_numbers_production
+msgid "e.g. SN0000001"
+msgstr ""
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_production_workorder_form_view_inherit
@@ -7144,7 +7150,7 @@ msgstr ""
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_bom_form_view
 msgid "it is added as a component in a manufacturing order"
-msgstr ""
+msgstr "se añadió como componente en una orden de fabricación "
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_bom_form_view
@@ -7152,6 +7158,8 @@ msgid ""
 "it is moved via a transfer, such as a receipt or a delivery order for "
 "instance."
 msgstr ""
+"se movió a través de un traslado, como un recibo o una orden de entrega, por"
+" ejemplo."
 
 #. module: mrp
 #: model_terms:ir.ui.view,arch_db:mrp.mrp_routing_workcenter_form_view
@@ -7163,7 +7171,7 @@ msgstr "último"
 #: code:addons/mrp/models/mrp_production.py:0
 #, python-format
 msgid "manufacturing order"
-msgstr "orden de producción"
+msgstr "orden de fabricación"
 
 #. module: mrp
 #. odoo-python
