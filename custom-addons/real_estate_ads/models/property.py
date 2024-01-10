@@ -95,6 +95,13 @@ class Property(models.Model):
     #         },
     #     }
 
+    def action_url_action(self):
+        return {
+            "type": "ir.actions.act_url",
+            "url": "https://www.odoo.com",
+            "target": "new",
+        }
+
 
 class PropertyType(models.Model):
     _name = "estate.property.type"
