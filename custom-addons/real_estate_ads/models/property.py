@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 class Property(models.Model):
@@ -83,6 +83,17 @@ class Property(models.Model):
                 record.best_offer = max(record.offer_ids.mapped("price"))
             else:
                 record.best_offer = 0
+
+    # def action_client_action(self):
+    #     return {
+    #         "type": "ir.actions.client",
+    #         "tag": "display_notification",
+    #         "params": {
+    #             "title": _("Hello World"),
+    #             type: "success",
+    #             "sticky": True,
+    #         },
+    #     }
 
 
 class PropertyType(models.Model):
