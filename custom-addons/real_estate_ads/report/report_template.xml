@@ -44,7 +44,7 @@
                                 <tr>
                                     <th class="text-start">Customer</th>
                                     <th class="text-start">Price</th>
-                                    <th class="text-start">alidity</th>
+                                    <th class="text-start">Validity</th>
                                     <th class="text-start">Deadline</th>
                                     <th class="text-end">Status</th>
                                 </tr>
