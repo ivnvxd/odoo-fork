@@ -95,12 +95,16 @@ class Property(models.Model):
     #         },
     #     }
 
-    def action_url_action(self):
-        return {
-            "type": "ir.actions.act_url",
-            "url": "https://www.odoo.com",
-            "target": "new",
-        }
+    # def action_url_action(self):
+    #     return {
+    #         "type": "ir.actions.act_url",
+    #         "url": "https://www.odoo.com",
+    #         "target": "new",
+    #     }
+
+    def _get_report_base_filename(self):
+        self.ensure_one()
+        return "Estate Property - %s" % (self.name)
 
 
 class PropertyType(models.Model):
