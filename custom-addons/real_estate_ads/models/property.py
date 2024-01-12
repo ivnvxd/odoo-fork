@@ -23,6 +23,7 @@ class Property(models.Model):
         ],
         string="Status",
         default="new",
+        group_expand="_expand_state",
     )
     tag_ids = fields.Many2many("estate.property.tag", string="Property Tags")
     type_id = fields.Many2one("estate.property.type", string="Property Type")
@@ -123,6 +124,9 @@ class Property(models.Model):
 
     def _get_emails(self):
         return ",".join(self.offer_ids.mapped("partner_id.email"))
+
+    def _expand_state(self, states, domain, order):
+        return [key for key, val in type(self).state.selection]
 
 
 class PropertyType(models.Model):
