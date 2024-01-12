@@ -117,6 +117,13 @@ class Property(models.Model):
         for record in self:
             record.website_url = "/properties/%s" % record.id
 
+    def action_send_email(self):
+        template = self.env.ref("real_estate_ads.offer_mail_template")
+        template.send_mail(self.id, force_send=True)
+
+    def _get_emails(self):
+        return ",".join(self.offer_ids.mapped("partner_id.email"))
+
 
 class PropertyType(models.Model):
     _name = "estate.property.type"

@@ -22,6 +22,7 @@
         "views/menu_items.xml",
         # Data files
         "data/estate.property.type.csv",
+        "data/mail_template.xml",
         # Report
         "report/property_report.xml",
         "report/report_template.xml",
