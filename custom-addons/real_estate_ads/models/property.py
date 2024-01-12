@@ -3,7 +3,13 @@ from odoo import _, api, fields, models
 
 class Property(models.Model):
     _name = "estate.property"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = [
+        "mail.thread",
+        "mail.activity.mixin",
+        "utm.mixin",
+        "website.published.mixin",
+        "website.seo.metadata",
+    ]
     _description = "Real Estate Properties"
 
     name = fields.Char(string="Name", required=True)
@@ -106,6 +112,10 @@ class Property(models.Model):
     def _get_report_base_filename(self):
         self.ensure_one()
         return "Estate Property - %s" % (self.name)
+
+    def _compute_website_url(self):
+        for record in self:
+            record.website_url = "/properties/%s" % record.id
 
 
 class PropertyType(models.Model):

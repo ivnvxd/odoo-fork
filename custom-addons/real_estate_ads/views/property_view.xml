@@ -146,6 +146,9 @@
                             <!-- <button class="oe_stat_button" name="action_url_action" type="object" icon="fa-handshake-o">
                                 <field name="offer_count" string="Odoo" widget="statinfo"/>
                             </button> -->
+                            <button class="oe_stat_button" name="website_publish_button" type="object" icon="fa-globe">
+                                <field name="is_published" widget="website_publish_button"/>
+                            </button>
                         </div>
                         <group>
                             <field name="name" widget="char_emojis" placeholder="Property Name"/>
@@ -195,8 +198,12 @@
                             <page string="Other Info">
                                 <group>
                                     <field name="sales_id" widget="many2one_avatar_employee"/>
+                                    <field name="campaign_id"/>
+                                    <field name="source_id"/>
+                                    <field name="medium_id"/>
                                     <field name="buyer_id"/>
                                     <field name="phone" widget="email"/>
+                                    <field name="website_url"/>
                                 </group>
                             </page>
                         </notebook>
