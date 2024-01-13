@@ -99,7 +99,7 @@ class PropertyOffer(models.Model):
                 record.name = False
 
     name = fields.Char(string="Description", compute="_compute_name")
-    price = fields.Float(string="Price")
+    price = fields.Monetary(string="Price")
     status = fields.Selection(
         [("accepted", "Accepted"), ("refused", "Refused")], string="Status"
     )
@@ -111,6 +111,11 @@ class PropertyOffer(models.Model):
     creation_date = fields.Date(string="Creation Date", default=_set_create_date)
     deadline = fields.Date(
         string="Deadline", compute=_compute_deadline, inverse=_inverse_deadline
+    )
+    currency_id = fields.Many2one(
+        "res.currency",
+        string="Currency",
+        default=lambda self: self.env.user.company_id.currency_id,
     )
 
     def action_accept_offer(self):

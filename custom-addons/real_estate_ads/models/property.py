@@ -30,9 +30,9 @@ class Property(models.Model):
     description = fields.Text(string="Description")
     postcode = fields.Char(string="Postcode")
     date_availability = fields.Date(string="Available From")
-    expected_price = fields.Float(string="Expected Price", tracking=True)
-    best_offer = fields.Float(string="Best Offer", compute="_compute_best_price")
-    selling_price = fields.Float(string="Selling Price", readonly=True)
+    expected_price = fields.Monetary(string="Expected Price", tracking=True)
+    best_offer = fields.Monetary(string="Best Offer", compute="_compute_best_price")
+    selling_price = fields.Monetary(string="Selling Price", readonly=True)
     bedrooms = fields.Integer(string="Bedrooms")
     living_area = fields.Integer(string="Living Area (sqm)")
     facades = fields.Integer(string="Facades")
@@ -61,6 +61,11 @@ class Property(models.Model):
 
     total_area = fields.Integer(string="Total Area (sqm)")
     phone = fields.Char(string="Phone", related="buyer_id.phone")
+    currency_id = fields.Many2one(
+        "res.currency",
+        string="Currency",
+        default=lambda self: self.env.user.company_id.currency_id,
+    )
 
     def action_sold(self):
         self.state = "sold"
