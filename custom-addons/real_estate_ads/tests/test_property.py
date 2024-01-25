@@ -8,16 +8,22 @@ class TestProperty(TransactionCase):
             {"name": "Test User", "login": "test_user", "email": "test@example.com"}
         )
 
-        self.property_type = self.env["estate.property.type"].create(
-            {"name": "Test Type"}
-        )
-
         self.test_property_data = {
             "name": "Test Property",
             "description": "Test Description",
             "expected_price": 100000,
             "sales_id": self.test_user.id,
-            "type_id": self.property_type.id,
+        }
+
+        self.property_type = self.env["estate.property.type"]
+
+        self.test_type_data = {"name": "Test Type"}
+
+        self.property_tag = self.env["estate.property.tag"]
+
+        self.test_tag_data = {
+            "name": "Test Tag",
+            "color": 10,
         }
 
         self.Property = self.env["estate.property"]
@@ -64,3 +70,31 @@ class TestProperty(TransactionCase):
         property_record.action_cancel()
 
         self.assertEqual(property_record.state, "cancel")
+
+    def test_tag_creation(self):
+        """Test creation of a property tag"""
+        tag = self.property_tag.create(self.test_tag_data)
+
+        self.assertEqual(tag.name, "Test Tag")
+        self.assertEqual(tag.color, 10)
+
+    def test_tag_update(self):
+        """Test updating a property tag"""
+        tag = self.property_tag.create(self.test_tag_data)
+        tag.write({"name": "Updated Tag Name", "color": 20})
+
+        self.assertEqual(tag.name, "Updated Tag Name")
+        self.assertEqual(tag.color, 20)
+
+    def test_type_creation(self):
+        """Test creation of a property type"""
+        property_type = self.property_type.create(self.test_type_data)
+
+        self.assertEqual(property_type.name, "Test Type")
+
+    def test_type_update(self):
+        """Test updating a property type"""
+        property_type = self.property_type.create(self.test_type_data)
+        property_type.write({"name": "Updated Type Name"})
+
+        self.assertEqual(property_type.name, "Updated Type Name")
