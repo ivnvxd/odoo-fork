@@ -7,7 +7,7 @@
         Real Estate module to show available properties
     """,
     "category": "Sales",
-    "depends": ["base"],
+    "depends": ["base", "mail", "website"],
     "data": [
         # Groups
         "security/ir.model.access.csv",
@@ -20,13 +20,23 @@
         "views/property_tag_view.xml",
         "views/property_offer_view.xml",
         "views/menu_items.xml",
+        "views/property_web_template.xml",
         # Data files
-        # "data/property_type_data.xml",
         "data/estate.property.type.csv",
+        "data/mail_template.xml",
+        # Report
+        "report/property_report.xml",
+        "report/report_template.xml",
     ],
     "demo": [
         "demo/property_tag.xml",
     ],
+    # "assets": {
+    #     "web.assets_backend": [
+    #         "real_estate_ads/static/src/js/my_custom_tag.js",
+    #         "real_estate_ads/static/src/xml/my_custom_tag.xml",
+    #     ],
+    # },
     "installable": True,
     "application": True,
     "license": "LGPL-3",

@@ -1,8 +1,15 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 class Property(models.Model):
     _name = "estate.property"
+    _inherit = [
+        "mail.thread",
+        "mail.activity.mixin",
+        "utm.mixin",
+        "website.published.mixin",
+        "website.seo.metadata",
+    ]
     _description = "Real Estate Properties"
 
     name = fields.Char(string="Name", required=True)
@@ -16,15 +23,16 @@ class Property(models.Model):
         ],
         string="Status",
         default="new",
+        group_expand="_expand_state",
     )
     tag_ids = fields.Many2many("estate.property.tag", string="Property Tags")
     type_id = fields.Many2one("estate.property.type", string="Property Type")
     description = fields.Text(string="Description")
     postcode = fields.Char(string="Postcode")
     date_availability = fields.Date(string="Available From")
-    expected_price = fields.Float(string="Expected Price")
-    best_offer = fields.Float(string="Best Offer", compute="_compute_best_price")
-    selling_price = fields.Float(string="Selling Price", readonly=True)
+    expected_price = fields.Monetary(string="Expected Price", tracking=True)
+    best_offer = fields.Monetary(string="Best Offer", compute="_compute_best_price")
+    selling_price = fields.Monetary(string="Selling Price", readonly=True)
     bedrooms = fields.Integer(string="Bedrooms")
     living_area = fields.Integer(string="Living Area (sqm)")
     facades = fields.Integer(string="Facades")
@@ -53,6 +61,11 @@ class Property(models.Model):
 
     total_area = fields.Integer(string="Total Area (sqm)")
     phone = fields.Char(string="Phone", related="buyer_id.phone")
+    currency_id = fields.Many2one(
+        "res.currency",
+        string="Currency",
+        default=lambda self: self.env.user.company_id.currency_id,
+    )
 
     def action_sold(self):
         self.state = "sold"
@@ -83,6 +96,42 @@ class Property(models.Model):
                 record.best_offer = max(record.offer_ids.mapped("price"))
             else:
                 record.best_offer = 0
+
+    # def action_client_action(self):
+    #     return {
+    #         "type": "ir.actions.client",
+    #         "tag": "display_notification",
+    #         "params": {
+    #             "title": _("Hello World"),
+    #             type: "success",
+    #             "sticky": True,
+    #         },
+    #     }
+
+    # def action_url_action(self):
+    #     return {
+    #         "type": "ir.actions.act_url",
+    #         "url": "https://www.odoo.com",
+    #         "target": "new",
+    #     }
+
+    def _get_report_base_filename(self):
+        self.ensure_one()
+        return "Estate Property - %s" % (self.name)
+
+    def _compute_website_url(self):
+        for record in self:
+            record.website_url = "/properties/%s" % record.id
+
+    def action_send_email(self):
+        template = self.env.ref("real_estate_ads.offer_mail_template")
+        template.send_mail(self.id, force_send=True)
+
+    def _get_emails(self):
+        return ",".join(self.offer_ids.mapped("partner_id.email"))
+
+    def _expand_state(self, states, domain, order):
+        return [key for key, val in type(self).state.selection]
 
 
 class PropertyType(models.Model):

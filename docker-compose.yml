@@ -17,6 +17,7 @@ services:
       - PASSWORD=myodoo
       # - ODOO_PARAMS=-d db -u real_estate_ads
       - ODOO_PARAMS=-u real_estate_ads
+      # - ODOO_PARAMS=-u real_estate_ads -i mail utm website
 
   db:
     image: postgres:16.1-alpine

@@ -99,17 +99,23 @@ class PropertyOffer(models.Model):
                 record.name = False
 
     name = fields.Char(string="Description", compute="_compute_name")
-    price = fields.Float(string="Price")
+    price = fields.Monetary(string="Price")
     status = fields.Selection(
         [("accepted", "Accepted"), ("refused", "Refused")], string="Status"
     )
-    partner_id = fields.Many2one("res.partner", string="Partner")
+    partner_id = fields.Many2one("res.partner", string="Customer")
+    partner_email = fields.Char(string="Customer Email", related="partner_id.email")
     property_id = fields.Many2one("estate.property", string="Property")
     validity = fields.Integer(string="Validity (days)", default=7)
     # creation_date = fields.Date(string="Creation Date")
     creation_date = fields.Date(string="Creation Date", default=_set_create_date)
     deadline = fields.Date(
         string="Deadline", compute=_compute_deadline, inverse=_inverse_deadline
+    )
+    currency_id = fields.Many2one(
+        "res.currency",
+        string="Currency",
+        default=lambda self: self.env.user.company_id.currency_id,
     )
 
     def action_accept_offer(self):
@@ -129,3 +135,15 @@ class PropertyOffer(models.Model):
         self.status = "refused"
         if all(self.property_id.offer_ids.mapped("status")):
             self.property_id.write({"selling_price": 0, "state": "received"})
+
+    def extend_offer_deadline(self):
+        active_ids = self._context.get("active_ids", [])
+        if active_ids:
+            offer_ids = self.env["estate.property.offer"].browse(active_ids)
+            for offer in offer_ids:
+                offer.validity += 7
+
+    def _extend_offer_deadline(self):
+        offer_ids = self.env["estate.property.offer"].search([])
+        for offer in offer_ids:
+            offer.validity += 1
