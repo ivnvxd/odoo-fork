@@ -1062,6 +1062,10 @@ msgid ""
 "                            info@yourcompany.example.com\n"
 "                        </small>"
 msgstr ""
+"<small>\n"
+"                            <i class=\"fa fa-1x fa-fw fa-envelope me-1\"/>\n"
+"                            info@yourcompany.example.com\n"
+"                        </small>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_comparisons
@@ -1604,6 +1608,13 @@ msgid "About us"
 msgstr "من نحن "
 
 #. module: website
+#. odoo-python
+#: code:addons/website/models/website.py:0
+#, python-format
+msgid "Access Denied"
+msgstr "تم رفض الوصول "
+
+#. module: website
 #: model:ir.model.fields,field_description:website.field_website_visitor__access_token
 msgid "Access Token"
 msgstr "رمز الوصول "
@@ -1831,6 +1842,11 @@ msgstr "إضافة حقل جديد بعد هذا الحقل "
 #: model_terms:ir.ui.view,arch_db:website.s_website_form_options
 msgid "Add a new field at the end"
 msgstr "إضافة حقل جديد في النهاية "
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.view_view_form_extend
+msgid "Add groups in the \"Access Rights\" tab below."
+msgstr ""
 
 #. module: website
 #. odoo-python
@@ -8052,6 +8068,11 @@ msgid "Next"
 msgstr "التالي"
 
 #. module: website
+#: model_terms:ir.ui.view,arch_db:website.step_wizard
+msgid "Next:"
+msgstr ""
+
+#. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_tabs_options
 msgid "No Slide Effect"
 msgstr "دون تأثير "
@@ -11668,7 +11689,7 @@ msgstr "الأعلى "
 #: code:addons/website/models/website.py:0
 #, python-format
 msgid "Top Menu for Website %s"
-msgstr "القائمة العلوية للموقع الإلكترونية %s "
+msgstr "القائمة العلوية للموقع الإلكتروني %s "
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options_background_options
@@ -13110,7 +13131,7 @@ msgstr "لا تملك صلاحيات النشر/إلغاء النشر "
 #: code:addons/website/static/src/components/dialog/seo.xml:0
 #, python-format
 msgid "You don't have permissions to edit this record."
-msgstr ""
+msgstr "لا تملك صلاحيات تحرير هذا السجل. "
 
 #. module: website
 #. odoo-javascript

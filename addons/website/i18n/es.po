@@ -10,9 +10,9 @@
 # Pedro M. Baeza <pedro.baeza@tecnativa.com>, 2023
 # César J. Santacruz, 2023
 # Hugo Santos <hugo.santos@factorlibre.com>, 2023
-# Larissa Manderfeld, 2024
 # Fernanda Alvarez, 2024
 # Martin Trigaux, 2024
+# Larissa Manderfeld, 2024
 # Wil Odoo, 2024
 # 
 msgid ""
@@ -34,7 +34,7 @@ msgstr ""
 #: code:addons/website/static/src/snippets/s_image_gallery/options.js:0
 #, python-format
 msgid " Add Images"
-msgstr "Añadir imágenes"
+msgstr "Agregar imágenes"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.bs_debug_view
@@ -1071,6 +1071,10 @@ msgid ""
 "                            info@yourcompany.example.com\n"
 "                        </small>"
 msgstr ""
+"<small>\n"
+"                            <i class=\"fa fa-1x fa-fw fa-envelope me-1\"/>\n"
+"                            info@yourcompany.example.com\n"
+"                        </small>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_comparisons
@@ -1585,7 +1589,7 @@ msgstr ""
 #: code:addons/website/static/src/xml/web_editor.xml:0
 #, python-format
 msgid "AI"
-msgstr ""
+msgstr "IA"
 
 #. module: website
 #. odoo-javascript
@@ -1622,6 +1626,13 @@ msgstr "Sobre Nosotros"
 #: model_terms:ir.ui.view,arch_db:website.template_footer_minimalist
 msgid "About us"
 msgstr "Acerca de"
+
+#. module: website
+#. odoo-python
+#: code:addons/website/models/website.py:0
+#, python-format
+msgid "Access Denied"
+msgstr "Acceso denegado"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_visitor__access_token
@@ -1852,6 +1863,11 @@ msgstr "Añadir un nuevo campo después de este"
 #: model_terms:ir.ui.view,arch_db:website.s_website_form_options
 msgid "Add a new field at the end"
 msgstr "Añadir un nuevo campo al final"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.view_view_form_extend
+msgid "Add groups in the \"Access Rights\" tab below."
+msgstr ""
 
 #. module: website
 #. odoo-python
@@ -8112,6 +8128,11 @@ msgid "Next"
 msgstr "Siguiente"
 
 #. module: website
+#: model_terms:ir.ui.view,arch_db:website.step_wizard
+msgid "Next:"
+msgstr ""
+
+#. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_tabs_options
 msgid "No Slide Effect"
 msgstr "Sin efecto de diapositiva"
@@ -8291,7 +8312,7 @@ msgstr "Orientación nutricional"
 #: code:addons/website/static/src/client_actions/configurator/configurator.xml:0
 #, python-format
 msgid "OR"
-msgstr "OR"
+msgstr "O"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
@@ -9137,7 +9158,7 @@ msgstr "Presione <Tab> para el siguiente ["
 #: code:addons/website/static/src/components/dialog/seo.xml:0
 #, python-format
 msgid "Preview"
-msgstr "Previsualizar"
+msgstr "Vista previa"
 
 #. module: website
 #. odoo-javascript
@@ -11292,7 +11313,7 @@ msgstr "Activo temático"
 #. module: website
 #: model:ir.model,name:website.model_theme_ir_attachment
 msgid "Theme Attachments"
-msgstr "Adjuntos del tema"
+msgstr "Archivos adjuntos del tema"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.color_combinations_debug_view
@@ -11961,7 +11982,7 @@ msgstr "URL para"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "UTM Campaign"
-msgstr "Campaña de UTM"
+msgstr "Campaña UTM"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
@@ -11971,7 +11992,7 @@ msgstr "UTM Medium"
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippet_options
 msgid "UTM Source"
-msgstr "UTM Source"
+msgstr "Fuente UTM"
 
 #. module: website
 #. odoo-javascript
@@ -13158,7 +13179,7 @@ msgstr "Puede editar colores y fondos para resaltar las características."
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_timeline
 msgid "You can edit, duplicate..."
-msgstr "Puedes editar, duplicar..."
+msgstr "Puede editar, duplicar..."
 
 #. module: website
 #. odoo-python
@@ -13180,7 +13201,7 @@ msgstr "Sólo puede usar plantilla prefijada por dynamic_filter_template_ "
 #: code:addons/website/static/src/snippets/s_website_form/options.js:0
 #, python-format
 msgid "You can't duplicate the submit button of the form."
-msgstr "No se puede duplicar el botón de envío del formulario."
+msgstr "No puede duplicar el botón de envío del formulario."
 
 #. module: website
 #. odoo-javascript
@@ -13218,7 +13239,7 @@ msgstr "No tiene los derechos para publicar / anular la publicación"
 #: code:addons/website/static/src/components/dialog/seo.xml:0
 #, python-format
 msgid "You don't have permissions to edit this record."
-msgstr ""
+msgstr "No tiene permiso para editar este registro."
 
 #. module: website
 #. odoo-javascript
@@ -13524,7 +13545,7 @@ msgstr "btn-secondary"
 #: code:addons/website/static/src/client_actions/configurator/configurator.xml:0
 #, python-format
 msgid "business"
-msgstr "negocios"
+msgstr ","
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.snippets
@@ -13635,7 +13656,7 @@ msgstr "fonts.google.com"
 #: code:addons/website/static/src/client_actions/configurator/configurator.xml:0
 #, python-format
 msgid "for my"
-msgstr "para mi"
+msgstr "para mi negocio de"
 
 #. module: website
 #. odoo-javascript
@@ -13905,7 +13926,7 @@ msgstr "filas"
 #: code:addons/website/static/src/client_actions/configurator/configurator.js:0
 #, python-format
 msgid "schedule appointments"
-msgstr "fechas previstas para los nombramientos"
+msgstr "programar citas"
 
 #. module: website
 #. odoo-javascript

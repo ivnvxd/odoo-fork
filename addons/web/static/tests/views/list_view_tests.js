@@ -18820,7 +18820,7 @@ QUnit.module("Views", (hooks) => {
         serverData.models.bar.records[0].definitions = [definition];
         for (const record of serverData.models.foo.records) {
             if (record.m2o === 1) {
-                record.properties = [{ ...definition, value: 123.45 }];
+                record.properties = [{ ...definition, value: record.id === 4 ? false : 123.45 }];
             }
         }
 
@@ -18859,8 +18859,8 @@ QUnit.module("Views", (hooks) => {
         assert.strictEqual(target.querySelector(".o_field_cell.o_float_cell").textContent, "3.21");
         assert.strictEqual(
             target.querySelector(".o_list_footer .o_list_number").textContent,
-            "250.11",
-            "First property is 3.21, second is zero because it has a different parent and the 2 others are 123.45 so the total should be 3.21 + 123.45 * 2 = 250.11"
+            "126.66",
+            "First property is 3.21, second is zero because it has a different parent the other is 123.45 and the last one zero because it is false so the total should be 3.21 + 123.45 = 126.66"
         );
     });
 
@@ -19829,5 +19829,29 @@ QUnit.module("Views", (hooks) => {
         assert.containsNone(target, ".o_view_nocontent");
         assert.containsOnce(target, ".o_data_row");
         assert.containsOnce(target, ".o_data_row.o_selected_row");
+    });
+
+    QUnit.test("Adding new record in list view with open form view button", async function (assert) {
+        await makeView({
+            type: "list",
+            resModel: "foo",
+            serverData,
+            arch: '<tree editable="top" open_form_view="1"><field name="foo"/></tree>',
+            selectRecord: (resId, options) => {
+                assert.step(`switch to form - resId: ${resId} activeIds: ${options.activeIds}`);
+            },
+        });
+
+        await clickAdd();
+        assert.containsN(
+            target,
+            "td.o_list_record_open_form_view",
+            5,
+            "button to open form view should be present on each row"
+        );
+
+        await editInput(target, ".o_field_widget[name=foo] input", "new");
+        await click(target.querySelector("td.o_list_record_open_form_view"));
+        assert.verifySteps(["switch to form - resId: 5 activeIds: 5,1,2,3,4"]);
     });
 });

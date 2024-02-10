@@ -257,7 +257,7 @@ msgstr ")<br/>"
 #: code:addons/account/models/account_tax.py:0
 #, python-format
 msgid "- %(name)s in %(company)s"
-msgstr ""
+msgstr "- %(name)s ใน %(company)s"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -1541,7 +1541,7 @@ msgstr ""
 #: code:addons/account/models/account_move_line.py:0
 #, python-format
 msgid "A temporary number can not be used in a real matching"
-msgstr ""
+msgstr "ไม่สามารถใช้หมายเลขชั่วคราวในการจับคู่จริงได้"
 
 #. module: account
 #: model:res.groups,name:account.group_warning_account
@@ -4210,7 +4210,7 @@ msgstr "บริษัทที่เกี่ยวข้องกับสม
 #: code:addons/account/static/src/js/tours/account.js:0
 #, python-format
 msgid "Complete the partner data with email"
-msgstr ""
+msgstr "กรอกข้อมูลพาร์ทเนอร์ด้วยอีเมล"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_report__use_sections
@@ -6296,6 +6296,15 @@ msgid "Epd Needed"
 msgstr "Epd Needed"
 
 #. module: account
+#. odoo-python
+#: code:addons/account/models/chart_template.py:0
+#, python-format
+msgid ""
+"Error while loading the localization. You should probably update your "
+"localization app first."
+msgstr "เกิดข้อผิดพลาดในการโหลดการแปลภาษา คุณควรอัปเดตแอปการแปลภาษาของคุณก่อน"
+
+#. module: account
 #. odoo-javascript
 #: code:addons/account/static/src/components/account_type_selection/account_type_selection.js:0
 #: model:ir.model.fields.selection,name:account.selection__account_account__account_type__equity
@@ -7005,11 +7014,13 @@ msgid ""
 "Gaps due to canceled invoices, deleted entries or manual errors in open "
 "period."
 msgstr ""
+"ช่องว่างเนื่องจากใบแจ้งหนี้ที่ถูกยกเลิก รายการที่ถูกลบ "
+"หรือข้อผิดพลาดด้วยตนเองในช่วงเวลาที่เปิดอยู่"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
 msgid "Gaps in the sequence"
-msgstr ""
+msgstr "ช่องว่างในลำดับ"
 
 #. module: account
 #: model:ir.ui.menu,name:account.menu_finance_entries_generate_entries
@@ -8197,10 +8208,39 @@ msgstr "สถิติใบแจ้งหนี้"
 
 #. module: account
 #. odoo-python
+#: code:addons/account/wizard/account_move_send.py:0
+#, python-format
+msgid "Invoices are being sent in the background."
+msgstr ""
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "Invoices in error"
+msgstr ""
+
+#. module: account
+#. odoo-python
 #: code:addons/account/models/account_journal_dashboard.py:0
 #, python-format
 msgid "Invoices owed to you"
 msgstr "ใบแจ้งหนี้ของลูกค้า"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "Invoices sent"
+msgstr ""
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "Invoices sent successfully."
+msgstr ""
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_journal_dashboard_kanban_view
@@ -10109,12 +10149,19 @@ msgstr ""
 #: code:addons/account/static/src/js/tours/account.js:0
 #, python-format
 msgid "Once your invoice is ready, confirm it."
-msgstr ""
+msgstr "เมื่อใบแจ้งหนี้ของคุณพร้อมแล้ว โปรดยืนยัน"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_partner_property_form
 msgid "One or more Bank Accounts set on this partner are also used by other"
 msgstr "บัญชีธนาคารตั้งแต่หนึ่งบัญชีขึ้นไปที่พาร์ทเนอร์รายนี้ใช้โดยบุคคลอื่น"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "One or more invoices couldn't be processed."
+msgstr ""
 
 #. module: account
 #: model:ir.ui.menu,name:account.root_payment_menu
@@ -10191,8 +10238,11 @@ msgid "Oops"
 msgstr "Oops"
 
 #. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
 #: model:ir.model.fields.selection,name:account.selection__account_invoice_report__state__posted
 #: model:ir.model.fields.selection,name:account.selection__account_journal__invoice_reference_type__none
+#, python-format
 msgid "Open"
 msgstr "เปิด"
 
@@ -10690,14 +10740,14 @@ msgstr "พาร์ทเนอร์"
 #: code:addons/account/models/partner.py:0
 #, python-format
 msgid "Partners that are used in hashed entries cannot be merged."
-msgstr ""
+msgstr "พาร์ทเนอร์ที่ใช้ในรายการแฮชไม่สามารถรวมเข้าด้วยกันได้"
 
 #. module: account
 #. odoo-python
 #: code:addons/account/wizard/account_move_send.py:0
 #, python-format
 msgid "Partners without email"
-msgstr ""
+msgstr "พาร์ทเนอร์ที่ไม่มีอีเมล"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -11131,7 +11181,7 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_move_send_form
 msgid "Please specify an email address on the"
-msgstr ""
+msgstr "กรุณาระบุที่อยู่อีเมลบน"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.bill_preview
@@ -12603,9 +12653,23 @@ msgstr ""
 "คุณสามารถเปิดใช้งานความสามารถในการส่งเงินได้"
 
 #. module: account
+#. odoo-python
+#: code:addons/account/wizard/account_move_send.py:0
+#, python-format
+msgid "Sending invoices"
+msgstr ""
+
+#. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_search
 msgid "Sent"
 msgstr "ส่งแล้ว"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/models/account_move.py:0
+#, python-format
+msgid "Sent invoices"
+msgstr ""
 
 #. module: account
 #: model:mail.template,description:account.mail_template_data_payment_receipt
@@ -14559,6 +14623,10 @@ msgid ""
 "The financial end year detected here is '%(year_end)s'.\n"
 "The incrementing number in this case is '%(formatted_seq)s'."
 msgstr ""
+"ลำดับจะเริ่มต้นใหม่อีกครั้งที่ 1 ในช่วงต้นปีการเงินทุกปี\n"
+"ปีเริ่มต้นทางการเงินที่ตรวจพบที่นี่คือ '%(year)s'\n"
+"ปีสิ้นสุดทางการเงินที่ตรวจพบที่นี่คือ '%(year_end)s'\n"
+"จำนวนที่เพิ่มขึ้นในกรณีนี้คือ '%(formatted_seq)s'"
 
 #. module: account
 #. odoo-python
@@ -16074,6 +16142,7 @@ msgid ""
 "We can't leave this document without any company. Please select a company "
 "for this document."
 msgstr ""
+"เราไม่สามารถทิ้งเอกสารนี้ได้หากไม่มีบริษัท กรุณาเลือกบริษัทสำหรับเอกสารนี้"
 
 #. module: account
 #. odoo-python
@@ -16752,7 +16821,7 @@ msgstr ""
 #: code:addons/account/models/account_account.py:0
 #, python-format
 msgid "You cannot merge accounts."
-msgstr ""
+msgstr "คุณไม่สามารถรวมบัญชีได้"
 
 #. module: account
 #. odoo-python
@@ -17228,7 +17297,7 @@ msgstr "เช่น domain.com"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_move_send_form
 msgid "following partners."
-msgstr ""
+msgstr "พาร์ทเนอร์ดังต่อไปนี้"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
@@ -17289,6 +17358,13 @@ msgstr ""
 #: model:ir.model.fields.selection,name:account.selection__account_reconcile_model__payment_tolerance_type__percentage
 msgid "in percentage"
 msgstr "เป็นเปอร์เซ็นต์"
+
+#. module: account
+#. odoo-python
+#: code:addons/account/wizard/account_move_send.py:0
+#, python-format
+msgid "invoices"
+msgstr "การแจ้งหนี้"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_partner_bank_form_inherit_account

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
+import datetime
 import logging
 
 from odoo.tools.float_utils import float_round
@@ -159,7 +160,7 @@ class Message(models.Model):
     @api.depends('discussion.messages.important')
     def _compute_has_important_sibling(self):
         for record in self:
-            siblings = record.discussion.messages - record
+            siblings = record.discussion.with_context(active_test=False).messages - record
             record.has_important_sibling = any(siblings.mapped('important'))
 
     @api.constrains('author', 'discussion')
@@ -1456,7 +1457,9 @@ class ComputeMember(models.Model):
 
 class User(models.Model):
     _name = _description = 'test_new_api.user'
+    _allow_sudo_commands = False
 
+    name = fields.Char()
     group_ids = fields.Many2many('test_new_api.group')
     group_count = fields.Integer(compute='_compute_group_count', store=True)
 
@@ -1468,7 +1471,9 @@ class User(models.Model):
 
 class Group(models.Model):
     _name = _description = 'test_new_api.group'
+    _allow_sudo_commands = False
 
+    name = fields.Char()
     user_ids = fields.Many2many('test_new_api.user')
 
 
@@ -1921,3 +1926,13 @@ class AnyTag(models.Model):
 
     name = fields.Char()
     child_ids = fields.Many2many('test_new_api.any.child')
+
+
+class ModelAutovacuumed(models.Model):
+    _name = _description = 'test_new_api.autovacuumed'
+
+    expire_at = fields.Datetime('Expires at')
+
+    @api.autovacuum
+    def _gc(self):
+        self.search([('expire_at', '<', datetime.datetime.now() - datetime.timedelta(days=1))]).unlink()

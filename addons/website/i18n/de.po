@@ -3,8 +3,8 @@
 # 	* website
 # 
 # Translators:
-# Larissa Manderfeld, 2024
 # Martin Trigaux, 2024
+# Larissa Manderfeld, 2024
 # Wil Odoo, 2024
 # 
 msgid ""
@@ -1074,6 +1074,10 @@ msgid ""
 "                            info@yourcompany.example.com\n"
 "                        </small>"
 msgstr ""
+"<small>\n"
+"                            <i class=\"fa fa-1x fa-fw fa-envelope me-1\"/>\n"
+"                            info@yourcompany.example.com\n"
+"                        </small>"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_comparisons
@@ -1626,6 +1630,13 @@ msgid "About us"
 msgstr "Über uns"
 
 #. module: website
+#. odoo-python
+#: code:addons/website/models/website.py:0
+#, python-format
+msgid "Access Denied"
+msgstr "Zugriff verweigert"
+
+#. module: website
 #: model:ir.model.fields,field_description:website.field_website_visitor__access_token
 msgid "Access Token"
 msgstr "Zugriffstoken"
@@ -1721,7 +1732,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:website.s_image_gallery_options
 #, python-format
 msgid "Add"
-msgstr "Hinzufügen von"
+msgstr "Hinzufügen:"
 
 #. module: website
 #: model_terms:ir.ui.view,arch_db:website.grid_layout_options
@@ -1856,6 +1867,11 @@ msgstr "Ein neues Feld nach diesem hinzufügen"
 #: model_terms:ir.ui.view,arch_db:website.s_website_form_options
 msgid "Add a new field at the end"
 msgstr "Ein neues Feld am Ende hinzufügen"
+
+#. module: website
+#: model_terms:ir.ui.view,arch_db:website.view_view_form_extend
+msgid "Add groups in the \"Access Rights\" tab below."
+msgstr ""
 
 #. module: website
 #. odoo-python
@@ -8142,6 +8158,11 @@ msgid "Next"
 msgstr "Weiter"
 
 #. module: website
+#: model_terms:ir.ui.view,arch_db:website.step_wizard
+msgid "Next:"
+msgstr ""
+
+#. module: website
 #: model_terms:ir.ui.view,arch_db:website.s_tabs_options
 msgid "No Slide Effect"
 msgstr "Kein Schiebeeffekt"
@@ -13266,7 +13287,7 @@ msgstr ""
 #: code:addons/website/static/src/components/dialog/seo.xml:0
 #, python-format
 msgid "You don't have permissions to edit this record."
-msgstr ""
+msgstr "Sie sind nicht berechtigt, diesen Datensatz zu bearbeiten."
 
 #. module: website
 #. odoo-javascript
